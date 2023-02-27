@@ -18,7 +18,7 @@ const checkerL = () => {
 
 const add = () => {
   if (arr.length !== 0) {
-    arr.forEach(items => items.index += 1);
+    arr.forEach(items, index=> items.index = index);
   }
 
   const obj = { description: inputAdd.value, completed: false, index: arr.length };
@@ -78,7 +78,7 @@ const add = () => {
             </label><span>`;
       article.appendChild(span);
       if (arr.length !== 0) {
-        arr.forEach(items => items.index += 1);
+        arr.forEach(items, index=> items.index = index);
       }
       localStorage.setItem('toDoList', JSON.stringify(arr));
     }

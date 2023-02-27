@@ -20,8 +20,8 @@ const completeTask = () => {
    */
 
   if (arr.length !== 0 && use !== 1) {
-    for (let y = 0; y < arr.length; y += 1) {
-      arr[y].index = y;
+    if (arr.length !== 0) {
+      arr.forEach(items, index=> items.index = index);
     }
   }
   for (let p = 0; p < arr.length; p += 1) {
@@ -98,8 +98,11 @@ const completeTask = () => {
 };
 
 window.addEventListener('load', () => {
-  for (let k = 0; k < restored.length; k += 1) {
+  /*for (let k = 0; k < restored.length; k += 1) {
     arr[k] = restored[k];
+  }*/
+  if (arr.length !== 0) {
+    arr.forEach((items, index)=> items = restored[index]);
   }
   completeTask();
   completer(arr);
