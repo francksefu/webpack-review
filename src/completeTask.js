@@ -8,9 +8,12 @@ const completer = (arrs) => {
         inputCheck[i].parentNode.childNodes[1].style.textDecoration = 'line-through';
         inputCheck[i].parentNode.childNodes[1].style.color = '#ddd';
         arrs[i].completed = true;
-        for (let b = 0; b < arrs.length; b += 1) {
+        /*for (let b = 0; b < arrs.length; b += 1) {
           tbl[b] = arrs[b];
-        }
+        }*/
+        arrs.array.forEach((element, index) => {
+          tbl[index] = element;
+        });
         localStorage.setItem('toDoList', JSON.stringify(tbl));
       } else {
         inputCheck[i].parentNode.childNodes[1].style.textDecoration = 'none';

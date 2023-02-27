@@ -18,9 +18,7 @@ const checkerL = () => {
 
 const add = () => {
   if (arr.length !== 0) {
-    for (let y = 0; y < arr.length; y += 1) {
-      arr[y].index = y;
-    }
+    arr.forEach(items => items.index += 1);
   }
 
   const obj = { description: inputAdd.value, completed: false, index: arr.length };
@@ -79,8 +77,8 @@ const add = () => {
             <span><input type="checkbox" class="padding checky" name="" id="${arr.length - 1}"><label for="${arr.length - 1}">${updateValue}
             </label><span>`;
       article.appendChild(span);
-      for (let y = 0; y < arr.length; y += 1) {
-        arr[y].index = y;
+      if (arr.length !== 0) {
+        arr.forEach(items => items.index += 1);
       }
       localStorage.setItem('toDoList', JSON.stringify(arr));
     }
